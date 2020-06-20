@@ -12,10 +12,6 @@ def readTemp():
     return temp
 
 
-def testTemp():
-    return 32
-
-
 def writeTemp(temp):
     with con:
         cursor = con.cursor()
@@ -24,4 +20,4 @@ def writeTemp(temp):
 
 
 if __name__ == '__main__':
-    writeTemp(testTemp())
+    writeTemp(readTemp())
