@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import pymysql
 from db_config import con
 from sense_hat import SenseHat
