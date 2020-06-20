@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import pymysql
+from db_config import con
 from sense_hat import SenseHat
 
 
@@ -10,8 +11,11 @@ def readTemp():
     return temp
 
 
+def testTemp():
+    return 32
+
+
 def writeTemp(temp):
-    con = pymysql.connect('localhost', 'user', 'password', 'database')
     with con:
         cursor = con.cursor()
         query = 'INSERT INTO temperature VALUES (NOW(), "%s");' % (temp)
@@ -19,4 +23,4 @@ def writeTemp(temp):
 
 
 if __name__ == '__main__':
-    writeTemp(readTemp())
+    writeTemp(testTemp())
